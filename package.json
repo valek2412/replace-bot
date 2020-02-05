@@ -1,0 +1,41 @@
+{
+  "name": "replace-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "DEBUG=replaceBot:* nodemon src/index.js --exec babel-node",
+    "build": "babel src -d build",
+    "clean": "rm -rf build",
+    "fix": "yarn run lint --fix",
+    "lint": "eslint -c .eslintrc.js --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
+    "precommit": "lint-staged",
+    "release": "git checkout master && git push --all && git push --tags"
+  },
+  "keywords": [],
+  "author": "Val Oleg",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "debug": "^4.1.1",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.3",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
+    "telegraf": "^3.36.0"
+  }
+}
